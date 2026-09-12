@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil profesional de Joseph Platinysh-Fuente - Full Stack Developer">
+    <title>Joseph Platinysh-Fuente | Full Stack Developer</title>
+
+    <style>
+        /* =========================================================
+           VARIABLES Y CONFIGURACIÓN GENERAL
+           ========================================================= */
+
+        :root {
+            --bg-main: #0d1117;
+            --bg-card: #161b22;
+            --bg-secondary: #0f141a;
+            --bg-hover: #1c2128;
+
+            --border: #30363d;
+            --border-hover: #58a6ff;
+
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --text-white: #ffffff;
+
+            --accent: #58a6ff;
+            --success: #3fb950;
+
+            --activity-0: #161b22;
+            --activity-1: #0e4429;
+            --activity-2: #006d32;
+            --activity-3: #26a641;
+            --activity-4: #39d353;
+
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 14px;
+
+            --transition: all 0.2s ease;
+        }
+
+        /* =========================================================
+           RESET
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================================================
+           CONTENEDOR PRINCIPAL
+           ========================================================= */
+
+        .profile-card {
+            width: 92%;
+            max-width: 1100px;
+
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+
+            overflow: hidden;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        .profile-header {
+            min-height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 20px;
+
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            min-width: 210px;
+        }
+
+        .brand-logo {
+            width: 28px;
+            height: 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+            border-radius: 6px;
+
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+
+            background: var(--bg-card);
+        }
+
+        .brand-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link {
+            padding: 7px 10px;
+
+            color: var(--text-secondary);
+            font-size: 12px;
+
+            border-radius: var(--radius-sm);
+
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: var(--bg-hover);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+
+            min-width: 210px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+
+            padding: 7px 11px;
+
+            background: var(--accent);
+            color: #0d1117;
+
+            border: 1px solid var(--accent);
+            border-radius: var(--radius-sm);
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .contact-button:hover {
+            background: #79b8ff;
+            transform: translateY(-1px);
+        }
+
+        .icon-link {
+            width: 30px;
+            height: 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--text-secondary);
+
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+
+            transition: var(--transition);
+        }
+
+        .icon-link:hover {
+            color: var(--text-primary);
+            border-color: var(--border);
+            background: var(--bg-hover);
+        }
+
+        .icon-link svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        /* =========================================================
+           LAYOUT
+           ========================================================= */
+
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+
+        /* =========================================================
+           SIDEBAR
+           ========================================================= */
+
+        .profile-sidebar {
+            padding: 28px 24px;
+
+            border-right: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+
+        .profile-summary {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+            border: 1px solid var(--border);
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #1f2933 0%,
+                    #0f141a 70%
+                );
+
+            color: var(--text-primary);
+
+            font-size: 30px;
+            font-weight: 700;
+
+            box-shadow:
+                0 0 0 4px var(--bg-card);
+        }
+
+        .profile-name {
+            margin-bottom: 2px;
+
+            color: var(--text-white);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .profile-username {
+            margin-bottom: 14px;
+
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .profile-role {
+            margin-bottom: 12px;
+
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .profile-description {
+            margin-bottom: 18px;
+
+            color: var(--text-secondary);
+            font-size: 12px;
+            line-height: 1.65;
+        }
+
+        .profile-info {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            padding: 15px 0;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .info-item svg {
+            width: 14px;
+            height: 14px;
+
+            flex-shrink: 0;
+
+            color: var(--text-secondary);
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            color: var(--text-secondary);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: var(--success);
+            box-shadow: 0 0 6px rgba(63, 185, 80, 0.35);
+        }
+
+        .profile-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+
+            margin-top: 18px;
+        }
+
+        .profile-button {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+
+            padding: 8px 12px;
+
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+
+            font-size: 12px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .profile-button:hover {
+            background: var(--bg-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-1px);
+        }
+
+        .profile-button.primary {
+            color: #0d1117;
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .profile-button.primary:hover {
+            background: #79b8ff;
+        }
+
+        .profile-button svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* =========================================================
+           MAIN
+           ========================================================= */
+
+        .profile-main {
+            min-width: 0;
+        }
+
+        .content-section {
+            padding: 24px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 12px;
+        }
+
+        .section-icon {
+            width: 27px;
+            height: 27px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--accent);
+
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+
+        .section-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .section-title {
+            color: var(--text-white);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 12px;
+            line-height: 1.65;
+        }
+
+        /* =========================================================
+           TECNOLOGÍAS
+           ========================================================= */
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .technology {
+            padding: 5px 8px;
+
+            color: var(--text-secondary);
+
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+
+            font-size: 12px;
+
+            transition: var(--transition);
+        }
+
+        .technology:hover {
+            color: var(--text-primary);
+            border-color: var(--accent);
+            background: var(--bg-hover);
+        }
+
+        /* =========================================================
+           PROYECTOS
+           ========================================================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .project-card {
+            min-width: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            padding: 16px;
+
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            background: #10161d;
+            transform: translateY(-2px);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 9px;
+        }
+
+        .project-name {
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .project-icon {
+            color: var(--text-secondary);
+        }
+
+        .project-icon svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .project-description {
+            flex: 1;
+
+            margin-bottom: 14px;
+
+            color: var(--text-secondary);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            margin-bottom: 13px;
+
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: #79b8ff;
+            gap: 8px;
+        }
+
+        /* =========================================================
+           ACTIVIDAD
+           ========================================================= */
+
+        .activity-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .activity-grid-container {
+            width: 100%;
+            overflow-x: auto;
+            padding-bottom: 3px;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 5px;
+
+            width: 100%;
+            min-width: 360px;
+        }
+
+        .activity-cell {
+            aspect-ratio: 1 / 1;
+
+            border-radius: 2px;
+            background: var(--activity-0);
+
+            border: 1px solid rgba(255, 255, 255, 0.025);
+
+            transition: var(--transition);
+        }
+
+        .activity-cell:hover {
+            transform: scale(1.15);
+            outline: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .activity-cell.level-1 {
+            background: var(--activity-1);
+        }
+
+        .activity-cell.level-2 {
+            background: var(--activity-2);
+        }
+
+        .activity-cell.level-3 {
+            background: var(--activity-3);
+        }
+
+        .activity-cell.level-4 {
+            background: var(--activity-4);
+        }
+
+        .activity-legend {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 5px;
+
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .legend-cells {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .legend-cell {
+            width: 10px;
+            height: 10px;
+
+            border-radius: 2px;
+            background: var(--activity-0);
+        }
+
+        .legend-cell.level-1 {
+            background: var(--activity-1);
+        }
+
+        .legend-cell.level-2 {
+            background: var(--activity-2);
+        }
+
+        .legend-cell.level-3 {
+            background: var(--activity-3);
+        }
+
+        .legend-cell.level-4 {
+            background: var(--activity-4);
+        }
+
+        /* =========================================================
+           EXPERIENCIA
+           ========================================================= */
+
+        .timeline {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+
+            padding-left: 22px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+            top: 5px;
+            bottom: 5px;
+            left: 4px;
+
+            width: 1px;
+
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -22px;
+            top: 5px;
+
+            width: 7px;
+            height: 7px;
+
+            border: 2px solid var(--bg-card);
+            border-radius: 50%;
+
+            background: var(--accent);
+
+            box-shadow: 0 0 0 1px var(--border);
+        }
+
+        .experience-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+
+            margin-bottom: 4px;
+        }
+
+        .experience-role {
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .experience-period {
+            flex-shrink: 0;
+
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .experience-company {
+            margin-bottom: 7px;
+
+            color: var(--accent);
+            font-size: 12px;
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        .profile-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 16px 24px;
+
+            background: var(--bg-secondary);
+
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .footer-tech {
+            color: var(--text-secondary);
+        }
+
+        .footer-copy {
+            color: var(--text-secondary);
+        }
+
+        /* =========================================================
+           TOOLTIP
+           ========================================================= */
+
+        [data-tooltip] {
+            position: relative;
+        }
+
+        [data-tooltip]::after {
+            content: attr(data-tooltip);
+
+            position: absolute;
+            bottom: calc(100% + 7px);
+            left: 50%;
+
+            transform: translateX(-50%) translateY(3px);
+
+            padding: 5px 8px;
+
+            white-space: nowrap;
+
+            color: var(--text-primary);
+            background: #010409;
+
+            border: 1px solid var(--border);
+            border-radius: 5px;
+
+            font-size: 11px;
+
+            opacity: 0;
+            pointer-events: none;
+
+            transition: var(--transition);
+        }
+
+        [data-tooltip]:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* =========================================================
+           RESPONSIVE - TABLET / MOBILE
+           ========================================================= */
+
+        @media (max-width: 900px) {
+            .profile-header {
+                flex-wrap: wrap;
+                gap: 10px;
+
+                padding: 12px 16px;
+            }
+
+            .brand,
+            .header-actions {
+                min-width: auto;
+            }
+
+            .main-nav {
+                order: 3;
+                width: 100%;
+
+                justify-content: center;
+
+                border-top: 1px solid var(--border);
+                padding-top: 8px;
+            }
+
+            .profile-layout {
+                grid-template-columns: 250px 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                align-items: flex-start;
+                padding: 20px 10px;
+            }
+
+            .profile-card {
+                width: 100%;
+            }
+
+            .profile-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+
+                padding: 24px 20px;
+            }
+
+            .profile-summary {
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-info {
+                align-items: center;
+            }
+
+            .info-item {
+                justify-content: center;
+            }
+
+            .profile-actions {
+                width: 100%;
+                max-width: 360px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .profile-header {
+                min-height: auto;
+            }
+
+            .brand {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .main-nav {
+                gap: 1px;
+
+                overflow-x: auto;
+                justify-content: flex-start;
+
+                padding-bottom: 3px;
+            }
+
+            .nav-link {
+                white-space: nowrap;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .activity-grid {
+                gap: 4px;
+            }
+        }
+
+        /* =========================================================
+           ACCESIBILIDAD
+           ========================================================= */
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <article class="profile-card">
+
+        <!-- =====================================================
+             HEADER
+             ====================================================== -->
+
+        <header class="profile-header">
+
+            <a href="#perfil" class="brand" aria-label="Perfil de Joseph">
+                <span class="brand-logo">&lt;/&gt;</span>
+                <span class="brand-name">Joseph Platinysh-Fuente</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="#perfil" class="nav-link">Perfil</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#tecnologias" class="nav-link">Habilidades</a>
+                <a href="#experiencia" class="nav-link">Experiencia</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <a href="mailto:contacto@example.com" class="contact-button">
+                    Contactar
+                </a>
+
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="icon-link"
+                    aria-label="GitHub"
+                    data-tooltip="GitHub"
+                >
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6-.02c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.47 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/>
+                    </svg>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="icon-link"
+                    aria-label="LinkedIn"
+                    data-tooltip="LinkedIn"
+                >
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.56 20.45h3.57V8.99H3.56v11.46ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"/>
+                    </svg>
+                </a>
+
+            </div>
+        </header>
+
+
+        <!-- =====================================================
+             CONTENIDO PRINCIPAL
+             ====================================================== -->
+
+        <div class="profile-layout">
+
+            <!-- =================================================
+                 SIDEBAR
+                 ================================================== -->
+
+            <aside class="profile-sidebar" id="perfil">
+
+                <div class="profile-summary">
+
+                    <div class="avatar" aria-label="Avatar con iniciales JS">
+                        JS
+                    </div>
+
+                    <h1 class="profile-name">
+                        Joseph Platinysh-Fuente
+                    </h1>
+
+                    <p class="profile-username">
+                        @josephplatinysh-fuente
+                    </p>
+
+                    <p class="profile-role">
+                        Full Stack Developer
+                    </p>
+
+                    <p class="profile-description">
+                        Desarrollador enfocado en crear soluciones web modernas,
+                        escalables y eficientes.
+                    </p>
+
+                    <div class="profile-info">
+
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                <path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/>
+                                <circle cx="12" cy="9" r="2.5"/>
+                            </svg>
+                            <span>Perú</span>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="status-dot"></span>
+                            <span class="availability">
+                                Disponible para nuevos proyectos
+                            </span>
+                        </div>
+
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="m3 7 9 6 9-6"/>
+                            </svg>
+                            <span>Disponible por email</span>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-actions">
+
+                        <a
+                            href="https://github.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="profile-button"
+                        >
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6-.02c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.47 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/>
+                            </svg>
+                            GitHub
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="profile-button"
+                        >
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.56 20.45h3.57V8.99H3.56v11.46ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+
+                        <a
+                            href="mailto:contacto@example.com"
+                            class="profile-button primary"
+                        >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="m3 7 9 6 9-6"/>
+                            </svg>
+                            Contactar
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+            <!-- =================================================
+                 MAIN CONTENT
+                 ================================================== -->
+
+            <main class="profile-main">
+
+                <!-- SOBRE MÍ -->
+
+                <section class="content-section" id="sobre-mi">
+
+                    <div class="section-heading">
+
+                        <span class="section-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                <path d="m8 9 3-3 3 3"/>
+                                <path d="m16 15-3 3-3-3"/>
+                                <path d="M11 6 8 18"/>
+                            </svg>
+                        </span>
+
+                        <h2 class="section-title">
+                            Sobre mí
+                        </h2>
+
+                    </div>
+
+                    <p class="section-description">
+                        Soy desarrollador de software especializado en construir
+                        aplicaciones web modernas y experiencias digitales funcionales.
+                        Me interesa transformar problemas reales en soluciones simples,
+                        mantenibles y escalables.
+                    </p>
+
+                </section>
+
+
+                <!-- TECNOLOGÍAS -->
+
+                <section class="content-section" id="tecnologias">
+
+                    <div class="section-heading">
+
+                        <span class="section-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                <path d="m8 8-4 4 4 4"/>
+                                <path d="m16 8 4 4-4 4"/>
+                                <path d="m14 5-4 14"/>
+                            </svg>
+                        </span>
+
+                        <h2 class="section-title">
+                            Tecnologías
+                        </h2>
+
+                    </div>
+
+                    <div class="technologies">
+
+                        <span class="technology">HTML</span>
+                        <span class="technology">CSS</span>
+                        <span class="technology">JavaScript</span>
+                        <span class="technology">TypeScript</span>
+                        <span class="technology">React</span>
+                        <span class="technology">Node.js</span>
+                        <span class="technology">Python</span>
+                        <span class="technology">Git</span>
+                        <span class="technology">GitHub</span>
+                        <span class="technology">SQL</span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- PROYECTOS -->
+
+                <section class="content-section" id="proyectos">
+
+                    <div class="section-heading">
+
+                        <span class="section-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                <path d="M4 7h16v13H4z"/>
+                                <path d="M8 7V4h8v3"/>
+                                <path d="M9 13h6"/>
+                            </svg>
+                        </span>
+
+                        <h2 class="section-title">
+                            Proyectos destacados
+                        </h2>
+
+                    </div>
+
+                    <div class="projects-grid">
+
+                        <article class="project-card">
+
+                            <div class="project-header">
+
+                                <h3 class="project-name">
+                                    Developer Portfolio
+                                </h3>
+
+                                <span class="project-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                        <path d="M4 7h16v13H4z"/>
+                                        <path d="M8 7V4h8v3"/>
+                                    </svg>
+                                </span>
+
+                            </div>
+
+                            <p class="project-description">
+                                Portfolio web responsive para presentar proyectos,
+                                habilidades y experiencia profesional.
+                            </p>
+
+                            <p class="project-tech">
+                                HTML · CSS · JavaScript
+                            </p>
+
+                            <a href="#" class="project-link">
+                                Ver proyecto
+                                <span>→</span>
+                            </a>
+
+                        </article>
+
+
+                        <article class="project-card">
+
+                            <div class="project-header">
+
+                                <h3 class="project-name">
+                                    Web Application
+                                </h3>
+
+                                <span class="project-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                        <path d="M5 4h14v16H5z"/>
+                                        <path d="M8 8h8M8 12h8M8 16h5"/>
+                                    </svg>
+                                </span>
+
+                            </div>
+
+                            <p class="project-description">
+                                Aplicación web diseñada para gestionar información
+                                mediante una interfaz clara, rápida y responsive.
+                            </p>
+
+                            <p class="project-tech">
+                                React · Node.js · SQL
+                            </p>
+
+                            <a href="#" class="project-link">
+                                Ver proyecto
+                                <span>→</span>
+                            </a>
+
+                        </article>
+
+
+                        <article class="project-card">
+
+                            <div class="project-header">
+
+                                <h3 class="project-name">
+                                    API Platform
+                                </h3>
+
+                                <span class="project-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                        <path d="M6 4h12v16H6z"/>
+                                        <path d="M9 8h6M9 12h6M9 16h3"/>
+                                    </svg>
+                                </span>
+
+                            </div>
+
+                            <p class="project-description">
+                                Servicio backend orientado a proporcionar APIs
+                                estructuradas, eficientes y fáciles de integrar.
+                            </p>
+
+                            <p class="project-tech">
+                                Node.js · Python · SQL
+                            </p>
+
+                            <a href="#" class="project-link">
+                                Ver proyecto
+                                <span>→</span>
+                            </a>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ACTIVIDAD -->
+
+                <section class="content-section" id="actividad">
+
+                    <div class="section-heading">
+
+                        <span class="section-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                <path d="M4 18V6"/>
+                                <path d="M4 18h16"/>
+                                <path d="m7 15 4-5 3 3 5-7"/>
+                            </svg>
+                        </span>
+
+                        <h2 class="section-title">
+                            Actividad de desarrollo
+                        </h2>
+
+                    </div>
+
+                    <div class="activity-wrapper">
+
+                        <div class="activity-grid-container">
+
+                            <div
+                                class="activity-grid"
+                                id="activityGrid"
+                                aria-label="Cuadrícula visual de actividad de desarrollo"
+                            ></div>
+
+                        </div>
+
+                        <div class="activity-legend">
+
+                            <span>Menos</span>
+
+                            <div class="legend-cells">
+                                <span class="legend-cell"></span>
+                                <span class="legend-cell level-1"></span>
+                                <span class="legend-cell level-2"></span>
+                                <span class="legend-cell level-3"></span>
+                                <span class="legend-cell level-4"></span>
+                            </div>
+
+                            <span>Más</span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- EXPERIENCIA -->
+
+                <section class="content-section" id="experiencia">
+
+                    <div class="section-heading">
+
+                        <span class="section-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                <rect x="3" y="6" width="18" height="14" rx="2"/>
+                                <path d="M8 6V4h8v2"/>
+                                <path d="M8 12h8"/>
+                            </svg>
+                        </span>
+
+                        <h2 class="section-title">
+                            Experiencia
+                        </h2>
+
+                    </div>
+
+                    <div class="timeline">
+
+                        <article class="timeline-item">
+
+                            <div class="experience-header">
+
+                                <h3 class="experience-role">
+                                    Full Stack Developer
+                                </h3>
+
+                                <span class="experience-period">
+                                    2025 — Actualidad
+                                </span>
+
+                            </div>
+
+                            <p class="experience-company">
+                                Empresa / Proyecto
+                            </p>
+
+                            <p class="experience-description">
+                                Desarrollo de aplicaciones web y soluciones digitales
+                                utilizando tecnologías frontend y backend modernas.
+                            </p>
+
+                        </article>
+
+
+                        <article class="timeline-item">
+
+                            <div class="experience-header">
+
+                                <h3 class="experience-role">
+                                    Web Developer
+                                </h3>
+
+                                <span class="experience-period">
+                                    2024 — 2025
+                                </span>
+
+                            </div>
+
+                            <p class="experience-company">
+                                Proyecto independiente
+                            </p>
+
+                            <p class="experience-description">
+                                Diseño y construcción de interfaces web responsive,
+                                optimizadas para una experiencia de usuario clara y eficiente.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+
+        <!-- =====================================================
+             FOOTER
+             ====================================================== -->
+
+        <footer class="profile-footer">
+
+            <span class="footer-tech">
+                Construido con HTML, CSS y JavaScript.
+            </span>
+
+            <span class="footer-copy">
+                © 2026 Joseph Platinysh-Fuente
+            </span>
+
+        </footer>
+
+    </article>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+        /* =========================================================
+           GENERADOR DE ACTIVIDAD VISUAL
+           12 columnas x 7 filas
+           ========================================================= */
+
+        const activityGrid = document.getElementById("activityGrid");
+
+        const activityPattern = [
+            0, 1, 0, 2, 1, 0, 3, 1, 0, 2, 1, 0,
+            1, 2, 1, 0, 3, 2, 1, 4, 2, 1, 0, 2,
+            0, 1, 2, 3, 1, 0, 2, 3, 2, 1, 3, 0,
+            2, 3, 1, 2, 4, 2, 1, 3, 2, 4, 1, 2,
+            1, 0, 2, 1, 3, 2, 0, 1, 4, 2, 3, 1,
+            0, 2, 1, 3, 2, 1, 4, 2, 3, 1, 2, 0,
+            2, 1, 0, 2, 3, 1, 2, 4, 1, 3, 2, 1
+        ];
+
+        activityPattern.forEach((level, index) => {
+            const cell = document.createElement("span");
+
+            cell.classList.add("activity-cell");
+
+            if (level > 0) {
+                cell.classList.add(`level-${level}`);
+            }
+
+            cell.setAttribute(
+                "title",
+                level === 0
+                    ? "Sin actividad"
+                    : `Nivel de actividad: ${level}`
+            );
+
+            activityGrid.appendChild(cell);
+        });
+
+
+        /* =========================================================
+           NAVEGACIÓN SUAVE
+           ========================================================= */
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+            link.addEventListener("click", event => {
+
+                const targetId = link.getAttribute("href");
+
+                if (targetId === "#") {
+                    event.preventDefault();
+                    return;
+                }
+
+                const target = document.querySelector(targetId);
+
+                if (target) {
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            });
+
+        });
+
+
+        /* =========================================================
+           FEEDBACK SIMPLE PARA ENLACES DE PROYECTOS
+           ========================================================= */
+
+        document.querySelectorAll(".project-link").forEach(link => {
+
+            link.addEventListener("click", event => {
+
+                if (link.getAttribute("href") === "#") {
+                    event.preventDefault();
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
